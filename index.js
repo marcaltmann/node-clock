@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) => {
   let date = new Date();
-  res.json({
-    date: date,
-  });
+  res.render('index', { date: date });
 });
 
 app.listen(port, () => {
