@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   res.render('index', { date: date.format('LLL') });
 });
 
+app.get('/error', (req, res) => {
+  throw new Error('Boom!');
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}.`);
 });
