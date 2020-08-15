@@ -16,6 +16,14 @@ app.get('/error', (req, res) => {
   throw new Error('Boom!');
 });
 
+app.get('/search', (req, res) => {
+  res.redirect('http://www.google.com/');
+});
+
+app.get('/old-page', (req, res) => {
+  res.redirect('/');
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}.`);
 });
